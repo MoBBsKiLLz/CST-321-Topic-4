@@ -1,7 +1,11 @@
 #include <stdio.h>
 
 void main(){
-    int binary[10]; // Used to capture the binary code
+    // Used to capture the binary code
+    int binary[10] = {
+                        0, 0, 0, 0, 0,
+                        0, 0, 0, 0, 0
+                     }; 
     int input; // Used to capture the input
 
     printf("Enter a number between 0 and 1000: ");
@@ -11,7 +15,9 @@ void main(){
     int toBinary = input;
     int i = 0; // Used to iterate loops
     while (toBinary != 0) {
-        binary[i] = toBinary % 2;
+        if(toBinary % 2 > 0) {
+            binary[i] = 1;
+        }
         toBinary = toBinary / 2;
         i++;
     }
@@ -35,11 +41,18 @@ void main(){
     printf("The bitwise result in binary is: ");
 
     // Convert to binary and add to array
-    int resBinary[20];
+    int resBinary[20] = {
+                            0, 0, 0, 0, 0,
+                            0, 0, 0, 0, 0,
+                            0, 0, 0, 0, 0,
+                            0, 0, 0, 0, 0
+                        };
     int resToBinary = result;
     i = 0; // Used to iterate loops
     while (resToBinary != 0) {
-        resBinary[i] = resToBinary % 2;
+        if(resToBinary % 2 > 0) {
+            resBinary[i] = 1;
+        }
         resToBinary = resToBinary / 2;
         i++;
     }
