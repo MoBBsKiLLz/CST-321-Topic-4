@@ -40,4 +40,7 @@ void main(){
         printf("%X", hexadecimal[i]);
     }
     printf("\n");
+
+    // Shitf 10 bits to the lift
+    printf("Left shift by 10: %d\n", input << 10);
 }
