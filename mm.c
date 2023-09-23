@@ -74,11 +74,12 @@ void main() {
     printf("Hex: 0x%08X\n", hexInput);
 
     // Get entry and offset
-    int entry = hexInput / input;
-    int offset = hexInput - (input * entry);
-    if (hexInput > 0 && physical[entry][offset] == 0) {
+    int vEntry = hexInput / input;
+    int offset = hexInput - (input * vEntry);
+    int pEntry = virtual[vEntry][offset];
+    if (hexInput > 0 && physical[pEntry][offset] == 0) {
         printf("Currently on Disk\n");
     } else {
-        printf("Physical Address: 0x%08X\n", physical[entry][offset]);
+        printf("Physical Address: 0x%08X\n", physical[pEntry][offset]);
     }
 }
